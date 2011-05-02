@@ -7,7 +7,8 @@ SampleApp::Application.routes.draw do
   get "pages/about"
   
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions,    :only => [:new, :create, :destroy]
+  resources :microposts,  :only => [:create, :destroy]
   
   match '/signin',  :to => "sessions#new"
   match '/signout', :to => "sessions#destroy"
